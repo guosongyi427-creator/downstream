@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
+  "menu": {
+    "items": [
+      {
+        "description": "Post today's daily river puzzle",
+        "endpoint": "/internal/menu/post-create",
+        "forUserType": "moderator",
+        "label": "Create a new Downstream post",
+        "location": "subreddit"
+      }
+    ]
+  },
+  "name": "downstream",
+  "post": {
+    "dir": "dist/client",
+    "entrypoints": {
+      "default": {
+        "entry": "splash.html",
+        "inline": true
+      },
+      "game": {
+        "entry": "game.html"
+      }
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch"
+  },
+  "server": {
+    "dir": "dist/server",
+    "entry": "index.cjs"
+  },
+  "triggers": {
+    "onAppInstall": "/internal/triggers/on-app-install"
+  }
+}
